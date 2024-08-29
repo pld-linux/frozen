@@ -1,0 +1,18 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 65fb923..dfcc437 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -126,8 +126,13 @@ if(frozen.installation)
+   # generate a CMake configuration file for consumption by CMake's `find_package`
+   # intrinsic
+   #
++
++  if(${CMAKE_VERSION} VERSION_GREATER "3.14")
++    set(OPTIONAL_ARCH_INDEPENDENT "ARCH_INDEPENDENT")
++  endif()
+   write_basic_package_version_file("frozenConfigVersion.cmake"
+     VERSION ${PROJECT_VERSION}
++    ${OPTIONAL_ARCH_INDEPENDENT}
+     COMPATIBILITY SameMajorVersion)
+ 
+   install(FILES "${PROJECT_BINARY_DIR}/frozenConfigVersion.cmake"
