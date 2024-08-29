@@ -97,7 +97,7 @@ W tym:
 install -d build
 cd build
 %cmake .. \
-	-DBUILD_TESTING=OFF
+	%{!?with_tests:-DBUILD_TESTING=OFF}
 
 %{__make}
 
