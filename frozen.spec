@@ -5,16 +5,13 @@
 Summary:	Header-only, constexpr alternative to gperf for C++14 users
 Summary(pl.UTF-8):	Składająca się z samych nagłówków, wykorzystująca constexpr alternatywa dla gperfa dla C++14
 Name:		frozen
-Version:	1.1.1
+Version:	1.2.0
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/serge-sans-paille/frozen/tags
 Source0:	https://github.com/serge-sans-paille/frozen/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9c498c6845e4e33ea686770d3d429aa2
-Patch0:		%{name}-gcc.patch
-Patch1:		%{name}-includes.patch
-Patch2:		%{name}-fix-arch-in-cmake.patch
+# Source0-md5:	16e41d6f91ffb8b62a92344258424721
 URL:		https://github.com/serge-sans-paille/frozen
 BuildRequires:	cmake >= 3.8
 BuildRequires:	libstdc++-devel >= 6:5
@@ -89,9 +86,6 @@ W tym:
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p0
-%patch2 -p1
 
 %build
 install -d build
